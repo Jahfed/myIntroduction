@@ -4,8 +4,8 @@ import logoGit from './img/github-mark/github-mark-white.png';
 import fotoMe from './img/me/jahfed-vierkant.jpg';
 import './MyGithub.css'
 
-// const result = await myGits();
-const result = [{ myGitUrl: 'empty', myGit: 'empty', myGitDescription: 'empty' }];
+const result = await myGits();
+// const result = [{ myGitUrl: 'empty', myGit: 'empty', myGitDescription: 'empty' }];
 
 function Jahfed() {
 
