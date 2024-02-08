@@ -1,10 +1,11 @@
 import { Octokit, App } from "octokit";
+import { config } from "dotenv";
 
 const myGits = async () => {
     const gitInfo = [];
 
     const octokit = new Octokit({
-        auth: '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'
+        auth: process.env.TOKEN
     })
 
     const response = await octokit.request('GET /user/repos', {
@@ -22,7 +23,7 @@ const myGits = async () => {
             }
         );
     });
-
+    console.log(await gitInfo);
     return gitInfo;
 }
 
