@@ -5,8 +5,10 @@ import fotoMe from './img/me/jahfed-vierkant.jpg';
 import './MyGithub.css'
 
 const result = await myGits();
+// const result = [{ myGitUrl: 'empty', myGit: 'empty', myGitDescription: 'empty' }];
 
 function Jahfed() {
+
     // extra info
     const info = {
         name: "Jahfed Wismans",
@@ -17,7 +19,6 @@ function Jahfed() {
         newInterests: ["python", "C#/dotnet", "React", "Laravel", "Vite"],
         futureInterests: ["matrix calculations", "machine learning", "AI-development"]
     }
-
 
     const [newItem, setNewItem] = useState('');
     const [list, setList] = useState([]);

@@ -4,7 +4,7 @@ const myGits = async () => {
     const gitInfo = [];
 
     const octokit = new Octokit({
-        auth: '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'
+        auth: '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'
     })
 
     const response = await octokit.request('GET /user/repos', {
