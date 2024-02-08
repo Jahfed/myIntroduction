@@ -1,5 +1,5 @@
 import { Octokit, App } from "octokit";
-import { config } from "dotenv";
+// import { config } from "dotenv";
 
 // Call the config method to load environment variables from .env into process.env
 config();
@@ -8,7 +8,7 @@ const myGits = async () => {
     const gitInfo = [];
 
     const octokit = new Octokit({
-        auth: process.env.TOKEN,
+        // auth: process.env.TOKEN,
     })
 
     const response = await octokit.request('GET /user/repos', {
