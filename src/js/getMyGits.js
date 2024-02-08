@@ -2,7 +2,7 @@ import { Octokit, App } from "octokit";
 // import { config } from "dotenv";
 
 // Call the config method to load environment variables from .env into process.env
-config();
+// config();
 
 const myGits = async () => {
     const gitInfo = [];
