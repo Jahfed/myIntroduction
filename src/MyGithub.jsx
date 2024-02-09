@@ -1,7 +1,12 @@
 import { useState } from "react";
 import myGits from './js/getMyGits.js';
 import logoGit from './img/github-mark/github-mark-white.png';
-import fotoMe from './img/me/jahfed-vierkant.jpg';
+import fotoMe1 from './img/me/jahfed-vierkant.jpg';
+import fotoMe2 from './img/me/IMG_1895.jpg';
+import fotoMe3 from './img/me/IMG_2003.jpg';
+import fotoMe4 from './img/me/IMG_2077.jpg';
+import fotoMe5 from './img/me/IMG_2215.jpg';
+import fotoMe6 from './img/me/IMG_2457.jpg';
 import './MyGithub.css'
 
 // const result = await myGits();
@@ -55,7 +60,8 @@ function Jahfed() {
 
     return (
         <>
-            <img className="avatar" src={fotoMe} height="150px" />
+            <img src={fotoMe6} alt="bckground" className="bgimg" />
+            <img className="avatar" src={fotoMe2} />
             <h1 className="header">Job Info</h1>
             <p>{info.name} - {info.job}</p>
             <div className="skills">Current Skills: {skills.skills.map((skill, index) => { return <span>{skill}, </span> })}</div>
@@ -64,6 +70,7 @@ function Jahfed() {
             <br />
             <hr />
             <br />
+
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="vul in" onChange={userInput} value={newItem} />
                 <button type="submit" >Mail</button>
