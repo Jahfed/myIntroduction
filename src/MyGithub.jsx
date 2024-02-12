@@ -61,7 +61,7 @@ function Jahfed() {
     return (
         <>
             <img src={fotoMe6} alt="bckground" className="bgimg" />
-            <img className="avatar" src={fotoMe2} />
+            <img className="avatar" src={fotoMe5} />
             <h1 className="header">Job Info</h1>
             <p>{info.name} - {info.job}</p>
             <div className="skills">Current Skills: {skills.skills.map((skill, index) => { return <span>{skill}, </span> })}</div>
