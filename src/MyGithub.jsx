@@ -1,5 +1,5 @@
 import { useState } from "react";
-import myGits from './js/getMyGits.js';
+// import myGits from './js/getMyGits.js';g
 import logoGit from './img/github-mark/github-mark-white.png';
 import fotoMe1 from './img/me/jahfed-vierkant.jpg';
 import fotoMe2 from './img/me/IMG_1895.jpg';
@@ -83,7 +83,7 @@ function Jahfed() {
             <hr />
 
             <h2>My_Githubs</h2>
-            <p>visit my repositories (updated dynamically):</p>
+            <p>visit my repositories:</p>
             <div className="ghRepo">
                 {
                     result.map((item, index) => (<p ><a href={item.myGitUrl} target="blanc" ><img src={logoGit} alt="GH_logo" height="30px" />   {item.myGit}</a> // {item.myGitDescription}</p>))
