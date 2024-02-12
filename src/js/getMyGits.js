@@ -1,33 +1,27 @@
-import { Octokit, App } from "octokit";
-// import { config } from "dotenv";
-
-// Call the config method to load environment variables from .env into process.env
-// config();
-
 const myGits = async () => {
     const gitInfo = [];
 
-    const octokit = new Octokit({
-        // auth: process.env.TOKEN,
-    })
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+    };
 
-    const response = await octokit.request('GET /user/repos', {
-        headers: {
-            'X-GitHub-Api-Version': '2022-11-28'
-        }
-    })
+    const myGits = await fetch("https://api.github.com/users/Jahfed/repos", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+            result.forEach(item => {
+                const sortedInfo = {
+                    "myGit": item.name,
+                    "myGitUrl": item.html_url,
+                    "myGitDescription": item.description
+                }
+                gitInfo.push(sortedInfo);
+            });
+            return gitInfo;
+        })
+        .catch(error => console.log('error', error))
 
-    response.data.forEach(item => {
-        gitInfo.push(
-            {
-                myGit: item.name,
-                myGitUrl: item.html_url,
-                myGitDescription: item.description
-            }
-        );
-    });
-    console.log(await gitInfo);
-    return gitInfo;
+    return myGits;
 }
 
 export default myGits;

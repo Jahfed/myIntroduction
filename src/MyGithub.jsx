@@ -1,5 +1,5 @@
-import { useState } from "react";
-// import myGits from './js/getMyGits.js';g
+import { useState, useEffect } from "react";
+import myGits from './js/getMyGits.js';
 import logoGit from './img/github-mark/github-mark-white.png';
 import fotoMe1 from './img/me/jahfed-vierkant.jpg';
 import fotoMe2 from './img/me/IMG_1895.jpg';
@@ -9,10 +9,21 @@ import fotoMe5 from './img/me/IMG_2215.jpg';
 import fotoMe6 from './img/me/IMG_2457.jpg';
 import './MyGithub.css'
 
-// const result = await myGits();
 const result = [{ myGitUrl: 'empty', myGit: 'empty', myGitDescription: 'empty' }];
 
 function Jahfed() {
+    const [newItem, setNewItem] = useState('');
+    const [list, setList] = useState([]);
+    const [gits, setGits] = useState([]);
+
+    useEffect(() => {
+        const fetchGits = async () => {
+            const response = await myGits();
+            console.log(response);
+            setGits(response);
+        }
+        fetchGits();
+    }, [])
 
     // extra info
     const info = {
@@ -25,16 +36,12 @@ function Jahfed() {
         futureInterests: ["matrix calculations", "machine learning", "AI-development"]
     }
 
-    const [newItem, setNewItem] = useState('');
-    const [list, setList] = useState([]);
-
     const userInput = (event) => {
         setNewItem(event.target.value);
     }
 
     const validateEmail = (isEmail) => {
         const emailRegex = /^[\w\S\.]+@[\w\S\.]+\.([a-z]{2,})$/i;
-        console.log(isEmail);
         if (emailRegex.test(isEmail)) {
             return true;
         } else {
@@ -86,7 +93,7 @@ function Jahfed() {
             <p>visit my repositories:</p>
             <div className="ghRepo">
                 {
-                    result.map((item, index) => (<p ><a href={item.myGitUrl} target="blanc" ><img src={logoGit} alt="GH_logo" height="30px" />   {item.myGit}</a> // {item.myGitDescription}</p>))
+                    gits.map((item, index) => (<p ><a href={item.myGitUrl} target="blanc" ><img src={logoGit} alt="GH_logo" height="30px" />   {item.myGit}</a> // {item.myGitDescription}</p>))
                 }
             </div >
         </>
