@@ -9,18 +9,29 @@ import fotoMe5 from './img/me/IMG_2215.jpg';
 import fotoMe6 from './img/me/IMG_2457.jpg';
 import './MyGithub.css'
 
-const result = [{ myGitUrl: 'empty', myGit: 'empty', myGitDescription: 'empty' }];
+
 
 function Jahfed() {
     const [newItem, setNewItem] = useState('');
     const [list, setList] = useState([]);
     const [gits, setGits] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const result = [{ myGitUrl: 'empty', myGit: 'empty', myGitDescription: 'empty' }];
 
     useEffect(() => {
+        setIsLoading(true);
         const fetchGits = async () => {
-            const response = await myGits();
-            console.log(response);
-            setGits(response);
+
+            try {
+                const response = await myGits();
+                console.log(response);
+                setGits(response);
+            } catch (error) {
+                setGits(result);
+            } finally {
+                setIsLoading(false);
+            }
         }
         fetchGits();
     }, [])
@@ -91,11 +102,14 @@ function Jahfed() {
 
             <h2>My_Githubs</h2>
             <p>visit my repositories:</p>
-            <div className="ghRepo">
-                {
-                    gits.map((item, index) => (<p ><a href={item.myGitUrl} target="blanc" ><img src={logoGit} alt="GH_logo" height="30px" />   {item.myGit}</a> // {item.myGitDescription}</p>))
-                }
-            </div >
+
+            {isLoading && <div>My gits are loading...</div>}
+            {!isLoading &&
+                <div className="ghRepo">
+                    {
+                        gits.map((item, index) => (<p ><a href={item.myGitUrl} target="blanc" ><img src={logoGit} alt="GH_logo" height="30px" />   {item.myGit}</a> // {item.myGitDescription}</p>))
+                    }
+                </div >}
         </>
 
     )
