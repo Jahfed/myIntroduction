@@ -105,7 +105,7 @@ function Jahfed() {
             <img className="avatar" src={fotoMe5} />
             <h1 className="header">Job Info</h1>
             <p className="persona">{info.name} - {info.job}</p>
-            <p className="info">{info.phone_number} - {info.email} - please contact for more detailed information or fill in the email.</p>
+            <p className="info">{info.phone_number} - {info.email} - please contact for more detailed information or request an email (see form below).</p>
             <div className="skills">Current Skills: {skills.skills.map((skill, index) => { return <span>{skill}, </span> })}</div>
             <div className="skills">Newly Acquired Interests/Skills: {skills.newInterests.map((skill, index) => { return <span>{skill}, </span> })}</div>
             <div className="skills">Future Interests/Skills: {skills.futureInterests.map((skill, index) => { return <span>{skill}, </span> })}</div>
@@ -142,8 +142,8 @@ function Jahfed() {
 
             <div className="info">
                 <p>Some personal information:</p>
-                <p>My previous job was: {info.previous_job} - <a href="{info.previous_url}">{info.previous_url}</a>
-                    <br /> Hobbies: {info.hobby} - <a href="{info.previous_url}">{info.hobby_url}</a></p>
+                <p>My previous job was: {info.previous_job} - <a href={info.previous_url} target="blank">{info.previous_url}</a>
+                    <br /> Hobbies: {info.hobby} - <a href={info.hobby_url} target="blank">{info.hobby_url}</a></p>
             </div>
         </>
 
