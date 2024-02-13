@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import emailjs from '@emailjs/browser';
 import myGits from './js/getMyGits.js';
 import logoGit from './img/github-mark/github-mark-white.png';
 import fotoMe1 from './img/me/jahfed-vierkant.jpg';
@@ -10,9 +11,10 @@ import fotoMe6 from './img/me/IMG_2457.jpg';
 import './MyGithub.css'
 
 
-
 function Jahfed() {
-    const [newItem, setNewItem] = useState('');
+    const [newUser, setUserName] = useState('');
+    const [newMail, setUserMail] = useState('');
+    const [newMessage, setUserMessage] = useState('');
     const [list, setList] = useState([]);
     const [gits, setGits] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -21,6 +23,7 @@ function Jahfed() {
 
     useEffect(() => {
         setIsLoading(true);
+        emailjs.init("Z6T9O2OsCoMqCsuKh");
         const fetchGits = async () => {
 
             try {
@@ -47,8 +50,16 @@ function Jahfed() {
         futureInterests: ["matrix calculations", "machine learning", "AI-development"]
     }
 
-    const userInput = (event) => {
-        setNewItem(event.target.value);
+    const userMail = (event) => {
+        setUserMail(event.target.value);
+    }
+
+    const userName = (event) => {
+        setUserName(event.target.value);
+    }
+
+    const userMessage = (event) => {
+        setUserMessage(event.target.value);
     }
 
     const validateEmail = (isEmail) => {
@@ -59,7 +70,6 @@ function Jahfed() {
             alert("invalid emaild address :(")
             return false;
         }
-
     }
 
     const deleteItem = (event) => {
@@ -71,8 +81,14 @@ function Jahfed() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (validateEmail(newItem)) {
-            setList([...list, { text: newItem }]);
+        if (validateEmail(newMail)) {
+            setList([...list, { text: [newUser, " - ", newMail] }]);
+
+            // const publicKey = "Z6T9O2OsCoMqCsuKh";
+            emailjs.send("service_ih7hlql", "template_3l74l5i", {
+                to_name: newUser,
+                reply_to: newMail,
+            });
         }
     }
 
@@ -90,9 +106,12 @@ function Jahfed() {
             <br />
 
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="vul in" onChange={userInput} value={newItem} />
+                <input type="text" placeholder="your name" onChange={userName} value={newUser} />
+                <input type="text" placeholder="your email" onChange={userMail} value={newMail} />
+                <input type="hidden" placeholder="your message" onChange={userMessage} value={newMessage} />
                 <button type="submit" >Mail</button>
-                <p>{newItem}</p>
+                <p>Your info: {newUser} // {newMail}</p>
+                <p>Hit "Mail" to receive an email...</p>
             </form>
             <div class='list'>{
                 list.map((item, index) => { return <span><p id={index}>{item.text} <button type="button" onClick={deleteItem}>Delete</button></p></span> })
@@ -107,9 +126,10 @@ function Jahfed() {
             {!isLoading &&
                 <div className="ghRepo">
                     {
-                        gits.map((item, index) => (<p ><a href={item.myGitUrl} target="blanc" ><img src={logoGit} alt="GH_logo" height="30px" />   {item.myGit}</a> // {item.myGitDescription}</p>))
+                        gits.map((item, index) => (<p className="gitCards"><a href={item.myGitUrl} target="blanc" ><img src={logoGit} alt="GH_logo" height="30px" />   {item.myGit}</a> // {item.myGitDescription}</p>))
                     }
-                </div >}
+                </div >
+            }
         </>
 
     )
