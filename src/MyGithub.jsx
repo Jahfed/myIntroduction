@@ -110,7 +110,7 @@ function Jahfed() {
             <div className="skills">Newly Acquired Interests/Skills: {skills.newInterests.map((skill, index) => { return <span>{skill}, </span> })}</div>
             <div className="skills">Future Interests/Skills: {skills.futureInterests.map((skill, index) => { return <span>{skill}, </span> })}</div>
             <br />
-            <hr />
+            {/* <hr /> */}
             <br />
 
             <form onSubmit={handleSubmit}>
@@ -124,7 +124,7 @@ function Jahfed() {
                 list.map((item, index) => { return <span><p id={index} className="info">{item.text} <button type="button" onClick={deleteItem}>Delete</button></p></span> })
             }</div>
             <br />
-            <hr />
+            {/* <hr /> */}
 
             <h2>My_Githubs</h2>
             <p>visit my repositories:</p>
