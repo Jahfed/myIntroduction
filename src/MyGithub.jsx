@@ -43,10 +43,17 @@ function Jahfed() {
     const info = {
         name: "Jahfed Wismans",
         job: "Retrained: Back-End/Fullstack developer",
+        phone_number: "+316 227 222 95",
+        email: "jahfed@icloud.com",
+        previous_job: "Movie production / Location Management and Scouting",
+        previous_url: "https://jahfed.com",
+        hobby: "Music",
+        hobby_url: "https://sharkytheband.nl"
     }
+
     const skills = {
         skills: ["javascript", "node.js", "php", "html", "css", "express", "prisma", "mySQL"],
-        newInterests: ["python", "C#/dotnet", "React", "Laravel", "Vite"],
+        newInterests: ["python (basics)", "C#/dotnet (basics)", "React", "Laravel", "Vite"],
         futureInterests: ["matrix calculations", "machine learning", "AI-development"]
     }
 
@@ -97,7 +104,8 @@ function Jahfed() {
             <img src={fotoMe6} alt="bckground" className="bgimg" />
             <img className="avatar" src={fotoMe5} />
             <h1 className="header">Job Info</h1>
-            <p>{info.name} - {info.job}</p>
+            <p className="persona">{info.name} - {info.job}</p>
+            <p className="info">{info.phone_number} - {info.email} - please contact for more detailed information or fill in the email.</p>
             <div className="skills">Current Skills: {skills.skills.map((skill, index) => { return <span>{skill}, </span> })}</div>
             <div className="skills">Newly Acquired Interests/Skills: {skills.newInterests.map((skill, index) => { return <span>{skill}, </span> })}</div>
             <div className="skills">Future Interests/Skills: {skills.futureInterests.map((skill, index) => { return <span>{skill}, </span> })}</div>
@@ -110,11 +118,10 @@ function Jahfed() {
                 <input type="text" placeholder="your email" onChange={userMail} value={newMail} />
                 <input type="hidden" placeholder="your message" onChange={userMessage} value={newMessage} />
                 <button type="submit" >Mail</button>
-                <p>Your info: {newUser} // {newMail}</p>
-                <p>Hit "Mail" to receive an email...</p>
+                <p className="info">Please submit your info: {newUser} // {newMail}<br />Press "Mail" to receive an email with my info...</p>
             </form>
             <div class='list'>{
-                list.map((item, index) => { return <span><p id={index}>{item.text} <button type="button" onClick={deleteItem}>Delete</button></p></span> })
+                list.map((item, index) => { return <span><p id={index} className="info">{item.text} <button type="button" onClick={deleteItem}>Delete</button></p></span> })
             }</div>
             <br />
             <hr />
@@ -126,10 +133,18 @@ function Jahfed() {
             {!isLoading &&
                 <div className="ghRepo">
                     {
-                        gits.map((item, index) => (<p className="gitCards"><a href={item.myGitUrl} target="blanc" ><img src={logoGit} alt="GH_logo" height="30px" />   {item.myGit}</a> // {item.myGitDescription}</p>))
+                        gits.map((item, index) => (<p className="gitCards"><a href={item.myGitUrl} target="blanc" ><img src={logoGit} alt="GH_logo" height="30px" />  git {item.myGit}</a> // {item.myGitDescription} // <a href={item.myLink} target="blanc" >{item.myLink}</a></p>))
                     }
                 </div >
             }
+
+            <br />
+
+            <div className="info">
+                <p>Some personal information:</p>
+                <p>My previous job was: {info.previous_job} - <a href="{info.previous_url}">{info.previous_url}</a>
+                    <br /> Hobbies: {info.hobby} - <a href="{info.previous_url}">{info.hobby_url}</a></p>
+            </div>
         </>
 
     )
