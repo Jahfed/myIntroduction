@@ -53,20 +53,23 @@ form {
     margin: 10px;
     padding: 15px;
     width: 200px;
-    height: 150px;
+    /* height: 150px; */
+    min-height: 100px;
+    min-width: 100px;
     border-style: solid;
     border-width: 0.5px;
     border-radius: 15px;
     box-shadow: 1px 1px 5px;
-
+    text-overflow: ellipsis;
 }
 
 .gitCards:hover {
     opacity: 0.75;
-    margin-top: 7px;
+    margin-top: 0px;
     box-shadow: 2px 2px 7px;
     transition: all 0.5s;
     cursor: pointer;
+
 }
 
 .info {
