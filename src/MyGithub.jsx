@@ -109,23 +109,10 @@ function Jahfed() {
             <div className="skills">Current Skills: {skills.skills.map((skill, index) => { return <span>{skill}, </span> })}</div>
             <div className="skills">Newly Acquired Interests/Skills: {skills.newInterests.map((skill, index) => { return <span>{skill}, </span> })}</div>
             <div className="skills">Future Interests/Skills: {skills.futureInterests.map((skill, index) => { return <span>{skill}, </span> })}</div>
-            <br />
-            {/* <hr /> */}
-            <br />
+            <p className="info"><a href="https://certificates.wincacademy.com/39bc2785-51d9-452e-94a2-a6cc0ac5063f#gs.4jt8uq">Winc Academy Certificate - Back End</a></p>
 
-            <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="your name" onChange={userName} value={newUser} />
-                <input type="text" placeholder="your email" onChange={userMail} value={newMail} />
-                <input type="hidden" placeholder="your message" onChange={userMessage} value={newMessage} />
-                <button type="submit" >Mail</button>
-                <p className="info">Please submit your info: {newUser} // {newMail}<br />Press "Mail" to receive an email with my info...</p>
-            </form>
-            <div class='list'>{
-                list.map((item, index) => { return <span><p id={index} className="info">{item.text} <button type="button" onClick={deleteItem}>Delete</button></p></span> })
-            }</div>
             <br />
-            {/* <hr /> */}
-
+            <br />
             <h2>My_Githubs</h2>
             <p>visit my repositories:</p>
 
@@ -145,6 +132,20 @@ function Jahfed() {
                 <p>My previous job was: {info.previous_job} - <a href={info.previous_url} target="blank">{info.previous_url}</a>
                     <br /> Hobbies: {info.hobby} - <a href={info.hobby_url} target="blank">{info.hobby_url}</a></p>
             </div>
+
+            <form onSubmit={handleSubmit}>
+                <input type="text" placeholder="your name" onChange={userName} value={newUser} />
+                <input type="text" placeholder="your email" onChange={userMail} value={newMail} />
+                <input type="hidden" placeholder="your message" onChange={userMessage} value={newMessage} />
+                <button type="submit" >Mail</button>
+                <p className="info">Please submit your info: {newUser} // {newMail}<br />Press "Mail" to receive an email with my info...</p>
+            </form>
+            <div class='list'>{
+                list.map((item, index) => { return <span><p id={index} className="info">{item.text} <button type="button" onClick={deleteItem}>Delete</button></p></span> })
+            }</div>
+            <br />
+            {/* <hr /> */}
+
         </>
 
     )
