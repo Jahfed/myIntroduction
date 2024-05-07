@@ -2,10 +2,11 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  margin-top: 20px;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: whitesmoke;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,7 +16,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #b1b5ff;
   text-decoration: inherit;
 }
 
@@ -28,7 +29,6 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {

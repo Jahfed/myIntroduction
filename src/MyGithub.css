@@ -1,15 +1,13 @@
 #root {
-    max-width: 1280;
-    margin: 0 auto;
-    padding: 2rem;
+    width: 100vw;
+    padding: 0;
     text-align: center;
+    /* background-color: white; */
 }
 
 .bgimg {
-    max-width: 100%;
+    max-width: 100vw;
     position: absolute;
-    margin-left: -20%;
-    margin-top: -5%;
     z-index: -2;
     object-fit: cover;
     height: 100%;
@@ -17,77 +15,36 @@
     overflow-x: hidden;
 }
 
-form {
-    background-color: rgba(245, 245, 245, .2);
-    border-radius: 12px;
-    border-style: solid;
-    border-width: 0.2px;
-    padding: 15px;
-    box-shadow: 1px 1px 5px;
-
-
-    input[type="text"] {
-        font-size: 100%;
-        padding: 15px;
-        margin-right: 15px;
-        border-radius: 12px;
-        border-style: solid;
-        border-width: 0.5px;
-        border-color: purple;
-    }
-
-    input[type="text"]:hover {
-        border-color: whitesmoke;
-    }
-}
-
-.ghRepo {
-    display: flex;
-    overflow-x: scroll;
-}
-
-.gitCards {
-    font-size: 14px;
-    background-color: rgba(245, 245, 245, .2);
-    overflow-y: scroll;
-    margin: 10px;
-    padding: 15px;
-    width: 200px;
-    /* height: 150px; */
-    min-height: 100px;
-    min-width: 100px;
-    border-style: solid;
-    border-width: 0.5px;
-    border-radius: 15px;
-    box-shadow: 1px 1px 5px;
-    text-overflow: ellipsis;
-}
-
-.gitCards:hover {
-    opacity: 0.75;
-    margin-top: 0px;
-    box-shadow: 2px 2px 7px;
-    transition: all 0.5s;
-    cursor: pointer;
-
-}
-
 .info {
     font-size: 12px;
     padding: 5px;
     margin-bottom: 15px;
-    margin-top: 5px;
+    margin-top: 2px;
+}
+
+.head {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20%;
+    margin-bottom: 20px;
+}
+
+.mainInfo {
+    text-align: left;
+    margin-left: 2%;
 }
 
 .header {
+    font-size: 40px;
+    color: rgba(19, 0, 165, 0.814);
     margin: 5px;
 }
 
 .avatar {
-    margin: 5px;
+    margin: 0px;
     object-fit: cover;
-    border-radius: 20px;
-    width: 270px;
+    border-radius: 10px;
+    width: 150px;
     height: 200px;
 }
 
@@ -98,11 +55,103 @@ form {
 }
 
 
-
 .skills {
-    font: 12px;
-    font-style: italic;
-    letter-spacing: 2px;
+    text-align: left;
+    margin-left: 20%;
+    color: rgba(19, 0, 165, 0.523);
+
+
+    font-size: 13px;
+
+    padding-top: 5px;
+
+    h3 {
+        letter-spacing: 2px;
+        font-size: 20px;
+        margin: 0px;
+        padding: 0px;
+        border-bottom: 1px solid;
+    }
+
+    .skill {
+        letter-spacing: 1px;
+        font-size: 12px;
+        display: flex;
+        flex-direction: row;
+        color: black;
+        border-left: solid rgba(3, 0, 194, 0.707) 1px;
+        padding-left: 15px;
+
+        b {
+            color: rgba(19, 0, 165, 0.523);
+            margin-right: 25px;
+            width: 120px;
+            text-overflow: ellipsis;
+        }
+
+        .list {
+            text-align: left;
+        }
+
+        span {
+            margin-left: 0px;
+        }
+    }
+}
+
+.cloudLink {
+    font-size: 14px;
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+    align-content: flex-start;
+    margin-bottom: 20px;
+    padding-left: 30%;
+
+    a {
+        font-weight: bold;
+        border-bottom: solid 1px;
+        margin-bottom: 0px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+}
+
+.certificates {
+    margin-top: 40px;
+    padding-top: 20px;
+    font-size: 12px;
+
+
+    a {
+        border-bottom: 1px solid;
+        font-weight: bold;
+        margin: 0px;
+        padding: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+
+    p {
+        margin: 0px;
+        padding: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+.personal {
+    font-size: 12px;
+    text-align: left;
+    margin-left: 30%;
+    margin-top: 20px;
+    padding-top: 0px;
+    padding-left: 20px;
+    border-left: 1px solid;
 }
 
 .persona {
@@ -111,6 +160,106 @@ form {
     margin: 0px;
     margin-bottom: 15px;
 }
+
+.contactForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+}
+
+form {
+    background-color: rgba(245, 245, 245, 0.313);
+    width: 50%;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 5px;
+    box-shadow: 1px 1px 4px;
+
+    input[type="text"] {
+        font-size: 100%;
+        padding: 15px;
+        margin-right: 15px;
+        border-radius: 8px;
+        border-style: solid;
+        border-width: 0.5px;
+        background-color: rgba(38, 0, 87, 0.783);
+    }
+
+    input[type="text"]:hover {
+        border-color: whitesmoke;
+    }
+
+    button[type="submit"] {
+        background-color: rgba(38, 0, 87, 0.783);
+    }
+
+    button[type="submit"]:hover {
+        border-color: whitesmoke;
+    }
+}
+
+.git {
+    padding: 0px;
+    margin: 0px;
+
+    h2 {
+        font-size: 20px;
+        color: rgba(54, 11, 128, 0.787);
+        border-top: 1px solid;
+        margin: 0px;
+        padding: 0px;
+        padding-top: 15px;
+    }
+
+    h5 {
+        font-size: 14px;
+        margin: 0px;
+        padding: 0px;
+        padding-bottom: 20px;
+        font-weight: normal;
+    }
+
+    p {
+        font-size: 12px;
+        text-align: left;
+    }
+}
+
+.ghRepo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 0px;
+}
+
+.gitCards {
+    width: 250px;
+    height: 80px;
+    font-size: 14px;
+    background-color: rgba(13, 0, 158, 0.676);
+    overflow-y: scroll;
+    margin: 5px;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px rgba(44, 44, 44, 0.464);
+    text-overflow: ellipsis;
+}
+
+.gitCards:hover {
+    opacity: 0.75;
+    margin-top: 3px;
+    box-shadow: 2px 2px 7px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+
 
 .logo {
     height: 6em;

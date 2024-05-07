@@ -10,7 +10,6 @@ import fotoMe5 from './img/me/IMG_2215.jpg';
 import fotoMe6 from './img/me/IMG_2457.jpg';
 import './MyGithub.css'
 
-
 function Jahfed() {
     const [newUser, setUserName] = useState('');
     const [newMail, setUserMail] = useState('');
@@ -42,7 +41,7 @@ function Jahfed() {
     // extra info
     const info = {
         name: "Jahfed Wismans",
-        job: "Retrained: Back-End/Fullstack developer",
+        job: "Retrained: Back-End/Fullstack developer (Junior)",
         phone_number: "+316 227 222 95",
         email: "jahfed@icloud.com",
         previous_job: "Movie production / Location Management and Scouting",
@@ -51,11 +50,60 @@ function Jahfed() {
         hobby_url: "https://sharkytheband.nl"
     }
 
-    const skills = {
-        skills: ["javascript", "node.js", "php", "html", "css", "express", "prisma", "mySQL"],
-        newInterests: ["python (basics)", "C#/dotnet (basics)", "React", "Laravel", "Vite"],
-        futureInterests: ["matrix calculations", "machine learning", "AI-development"]
-    }
+    const skills = [
+        {
+            title: "skills",
+            skills: ["javascript", "node.js", "php", "html", "css", "express", "prisma", "mySQL"]
+        },
+        {
+            title: "newInterests",
+            skills: ["python (basics)", "C#/dotnet (basics)", "React", "Laravel", "Vite", "Angular", "Docker", "Kubernetes", "AWS"]
+        },
+        {
+            title: "softSkills",
+            skills: ["management", "planning", "communication", "teamwork", "budgets", "contracts"]
+        },
+        {
+            title: "futureInterests",
+            skills: ["matrix calculations", "machine learning", "AI-development"]
+        }
+    ]
+
+    const cloudLinks = [
+        {
+            title: "Laravel",
+            link: "http://ec2-3-255-86-249.eu-west-1.compute.amazonaws.com",
+            description: "A simple application build with Laravel, connected to a MySQL database. This runs on a free instance of EC2, but can also be deployed as a full microservices app."
+        },
+        {
+            title: "Bookstore API",
+            link: "http://ec2-18-185-94-202.eu-central-1.compute.amazonaws.com",
+            description: "Deployment of an API for a bookstore with a REST API in node.js and Express. The bookstore is scalable, because all the functionalities are seperated, and the bookstore can also sell records in the future."
+        },
+        {
+            title: "Booking API",
+            link: "ec2-3-67-69-32.eu-central-1.compute.amazonaws.com",
+            description: "Deployment of the final API in Winc-Academy for a back-end booking API. A scalable REST API with JWT-token or Auth0 authentication, Sentry ErrorLogging, connnected to a database with Prisma ORM. Also possible to connect to a Planetscale or AWS database for scalability."
+        }
+    ]
+
+    const certificates = [
+        {
+            title: "Winc Certificate",
+            link: "https://certificates.wincacademy.com/39bc2785-51d9-452e-94a2-a6cc0ac5063f#gs.4jt8uq",
+            description: "skills: Node.js backend programming, Rest-API, Express, Prisma, Javascript, Node.js, Git, Postman, Tests, Python"
+        },
+        {
+            title: "Udemy Certificate - Docker/Kubernetes",
+            link: "https://www.udemy.com/certificate/UC-5b472554-e887-4531-b343-02a6ff802e81/",
+            description: "skills: Docker, Kubernetes, basic AWS"
+        },
+        {
+            title: "Udemy Certificate - Python/Flask",
+            link: "https://www.udemy.com/certificate/UC-5b472554-e887-4531-b343-02a6ff802e81/",
+            description: "skills: Rest-API, Python, Flask"
+        }
+    ]
 
     const userMail = (event) => {
         setUserMail(event.target.value);
@@ -101,49 +149,77 @@ function Jahfed() {
 
     return (
         <>
-            <img src={fotoMe6} alt="bckground" className="bgimg" />
-            <img className="avatar" src={fotoMe5} />
-            <h1 className="header">Job Info</h1>
-            <p className="persona">{info.name} - {info.job}</p>
-            <p className="info">{info.phone_number} - {info.email} - please contact for more detailed information or request an email (see form below).</p>
-            <div className="skills">Current Skills: {skills.skills.map((skill, index) => { return <span>{skill}, </span> })}</div>
-            <div className="skills">Newly Acquired Interests/Skills: {skills.newInterests.map((skill, index) => { return <span>{skill}, </span> })}</div>
-            <div className="skills">Future Interests/Skills: {skills.futureInterests.map((skill, index) => { return <span>{skill}, </span> })}</div>
-            <p className="info"><a href="https://certificates.wincacademy.com/39bc2785-51d9-452e-94a2-a6cc0ac5063f#gs.4jt8uq">Winc Academy Certificate - Back End</a></p>
-
-            <br />
-            <br />
-            <h2>My_Githubs</h2>
-            <p>visit my repositories:</p>
-
-            {isLoading && <div>My gits are loading...</div>}
-            {!isLoading &&
-                <div className="ghRepo">
-                    {
-                        gits.map((item, index) => (<p className="gitCards"><a href={item.myGitUrl} target="blanc" ><img src={logoGit} alt="GH_logo" height="30px" />  git {item.myGit}</a> // {item.myGitDescription} // <a href={item.myLink} target="blanc" >{item.myLink}</a></p>))
-                    }
-                </div >
-            }
-
-            <br />
-
-            <div className="info">
-                <p>Some personal information:</p>
-                <p>My previous job was: {info.previous_job} - <a href={info.previous_url} target="blank">{info.previous_url}</a>
-                    <br /> Hobbies: {info.hobby} - <a href={info.hobby_url} target="blank">{info.hobby_url}</a></p>
+            <div className="head">
+                <img className="avatar" src={fotoMe5} />
+                <div className="mainInfo">
+                    <h1 className="header">Job Info</h1>
+                    <p className="persona">{info.name} - {info.job}</p>
+                    <p className="info">{info.phone_number} - {info.email} - please contact for more detailed information or request an email (see form below).</p>
+                </div>
+            </div>
+            <div className="skills">
+                <h3>SKILLS</h3>
+                {
+                    skills.map((skill, i) => {
+                        return <div className="skill" key={i}><b>{skill.title}</b><div className="list"> {skill.skills.map((s, i) => { return <span key={i}>{s}, </span> })}</div></div>
+                    })
+                }
             </div>
 
-            <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="your name" onChange={userName} value={newUser} />
-                <input type="text" placeholder="your email" onChange={userMail} value={newMail} />
-                <input type="hidden" placeholder="your message" onChange={userMessage} value={newMessage} />
-                <button type="submit" >Mail</button>
-                <p className="info">Please submit your info: {newUser} // {newMail}<br />Press "Mail" to receive an email with my info...</p>
-            </form>
+            <br />
+            <p className="cloudLinks">
+                {
+                    cloudLinks.map((cloudLink, i) => {
+                        return <div className="cloudLink" key={i}><a href={cloudLink.link} target="_blank">{cloudLink.title}</a><p>{cloudLink.description}</p></div>
+                    })
+                }
+            </p>
+            <p className="certificates">
+                {
+                    certificates.map((certificate, i) => {
+                        return <div className="certificate" key={i}><a href={certificate.link} target="_blank">{certificate.title}</a><p>{certificate.description}</p></div>
+                    })
+                }
+            </p>
+
+            <br />
+            <div className="contactForm">
+                <form onSubmit={handleSubmit}>
+                    <input type="text" placeholder="your name" onChange={userName} value={newUser} />
+                    <input type="text" placeholder="your email" onChange={userMail} value={newMail} />
+                    <input type="hidden" placeholder="your message" onChange={userMessage} value={newMessage} />
+                    <button type="submit" >Mail</button>
+                    <p className="info">Please submit your info: {newUser} // {newMail}<br />Press "Mail" to receive an email with my info...</p>
+                </form>
+            </div>
+            <div className="personal">
+                <p>Some personal information:</p>
+                <p>My previous job was: {info.previous_job} - <a href={info.previous_url} target="_blank">{info.previous_url}</a>
+                    <br /> Hobbies: {info.hobby} - <a href={info.hobby_url} target="_blank">{info.hobby_url}</a></p>
+            </div>
+
+
             <div class='list'>{
-                list.map((item, index) => { return <span><p id={index} className="info">{item.text} <button type="button" onClick={deleteItem}>Delete</button></p></span> })
+                list.map((item, i) => { return <span key={i}><p id={i} className="info">{item.text} <button type="button" onClick={deleteItem}>Delete</button></p></span> })
             }</div>
             <br />
+            <br />
+            <div className="git">
+                <h2>***My Githubs***</h2>
+                <h5>Visit my repositories:</h5>
+
+                {isLoading && <div>My gits are loading...</div>}
+                {!isLoading &&
+                    <div className="ghRepo">
+                        {
+                            gits.map((item, i) => (<p key={i} className="gitCards"><a href={item.myGitUrl} target="_blank" ><img src={logoGit} alt="GH_logo" height="30px" />  git {item.myGit}</a> // {item.myGitDescription} // <a href={item.myLink} target="_blank" >{item.myLink}</a></p>))
+                        }
+                    </div >
+                }
+            </div>
+            <br />
+
+
             {/* <hr /> */}
 
         </>
