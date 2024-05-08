@@ -77,12 +77,12 @@ function Jahfed() {
         },
         {
             title: "Bookstore API",
-            link: "http://ec2-18-185-94-202.eu-central-1.compute.amazonaws.com",
+            link: "http://ec2-18-185-94-202.eu-central-1.compute.amazonaws.com/books",
             description: "Deployment of an API for a bookstore with a REST API in node.js and Express. The bookstore is scalable, because all the functionalities are seperated, and the bookstore can also sell records in the future."
         },
         {
             title: "Booking API",
-            link: "ec2-3-67-69-32.eu-central-1.compute.amazonaws.com",
+            link: "http://ec2-3-67-69-32.eu-central-1.compute.amazonaws.com",
             description: "Deployment of the final API in Winc-Academy for a back-end booking API. A scalable REST API with JWT-token or Auth0 authentication, Sentry ErrorLogging, connnected to a database with Prisma ORM. Also possible to connect to a Planetscale or AWS database for scalability."
         }
     ]
