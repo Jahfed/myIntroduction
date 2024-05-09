@@ -5,6 +5,16 @@
     /* background-color: white; */
 }
 
+h3 {
+    color: rgba(19, 0, 165, 0.523);
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 35px;
+    border-bottom: 1px solid;
+}
+
 .bgimg {
     max-width: 100vw;
     position: absolute;
@@ -15,17 +25,24 @@
     overflow-x: hidden;
 }
 
+.cv {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 10px;
+}
+
 .info {
     font-size: 12px;
     padding: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     margin-top: 2px;
 }
 
 .head {
     display: flex;
     flex-direction: row;
-    margin-left: 20%;
     margin-bottom: 20px;
 }
 
@@ -54,24 +71,15 @@
     cursor: pointer;
 }
 
-
 .skills {
     text-align: left;
-    margin-left: 20%;
+
     color: rgba(19, 0, 165, 0.523);
 
 
     font-size: 13px;
 
     padding-top: 5px;
-
-    h3 {
-        letter-spacing: 2px;
-        font-size: 20px;
-        margin: 0px;
-        padding: 0px;
-        border-bottom: 1px solid;
-    }
 
     .skill {
         letter-spacing: 1px;
@@ -99,7 +107,7 @@
     }
 }
 
-.cloudLink {
+.cloudLinks {
     font-size: 14px;
     display: flex;
     text-align: left;
@@ -108,7 +116,7 @@
     padding: 0px;
     align-content: flex-start;
     margin-bottom: 20px;
-    padding-left: 30%;
+
 
     a {
         font-weight: bold;
@@ -147,11 +155,10 @@
 .personal {
     font-size: 12px;
     text-align: left;
-    margin-left: 30%;
     margin-top: 20px;
     padding-top: 0px;
-    padding-left: 20px;
-    border-left: 1px solid;
+
+    /* border-left: 1px solid; */
 }
 
 .persona {
@@ -180,13 +187,15 @@ form {
     box-shadow: 1px 1px 4px;
 
     input[type="text"] {
-        font-size: 100%;
-        padding: 15px;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 10px;
         margin-right: 15px;
         border-radius: 8px;
         border-style: solid;
         border-width: 0.5px;
-        background-color: rgba(38, 0, 87, 0.783);
+        background-color: rgba(38, 0, 87, 0.735);
     }
 
     input[type="text"]:hover {
@@ -194,6 +203,9 @@ form {
     }
 
     button[type="submit"] {
+        font-weight: bold;
+        font-size: 14px;
+        color: white;
         background-color: rgba(38, 0, 87, 0.783);
     }
 

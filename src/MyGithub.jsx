@@ -76,14 +76,19 @@ function Jahfed() {
             description: "A simple application build with Laravel, connected to a MySQL database. This runs on a free instance of EC2, but can also be deployed as a full microservices app."
         },
         {
-            title: "Bookstore API",
+            title: "Bookstore API (Node.js - Express)",
             link: "http://ec2-18-185-94-202.eu-central-1.compute.amazonaws.com/books",
             description: "Deployment of an API for a bookstore with a REST API in node.js and Express. The bookstore is scalable, because all the functionalities are seperated, and the bookstore can also sell records in the future."
         },
         {
-            title: "Booking API",
+            title: "Booking API (Node.js - Express)",
             link: "http://ec2-3-67-69-32.eu-central-1.compute.amazonaws.com",
             description: "Deployment of the final API in Winc-Academy for a back-end booking API. A scalable REST API with JWT-token or Auth0 authentication, Sentry ErrorLogging, connnected to a database with Prisma ORM. Also possible to connect to a Planetscale or AWS database for scalability."
+        },
+        {
+            title: "Flask Store API (Flask)",
+            link: "http://ec2-18-199-90-249.eu-central-1.compute.amazonaws.com",
+            description: "Deployment of a Flask API with JWT protected endpoints. Read the included Swagger Documentation for the respective endpoints."
         }
     ]
 
@@ -149,63 +154,72 @@ function Jahfed() {
 
     return (
         <>
-            <div className="head">
-                <img className="avatar" src={fotoMe5} />
-                <div className="mainInfo">
-                    <h1 className="header">Job Info</h1>
-                    <p className="persona">{info.name} - {info.job}</p>
-                    <p className="info">{info.phone_number} - {info.email} - please contact for more detailed information or request an email (see form below).</p>
+            <div className="cv">
+                <div className="head">
+                    <img className="avatar" src={fotoMe5} />
+                    <div className="mainInfo">
+                        <h1 className="header">Job Info</h1>
+                        <p className="persona">{info.name} - {info.job}</p>
+                        <p className="info">{info.phone_number} - {info.email} - please contact for more detailed information or request an email (see form below).</p>
+                        <p className="info">Recently retrained junior back-end or fullstack developer with a management and poblem-solving background. The jobs involved a lot of problem-solving skills, critical thinking, quick adjustments and constant communication between different teams to get to the best end-product. These skills are now aimed at finding the best solution for your development-challenges. With recent retraining in back-end development and years of interest in coding and digital developments I am available to start directly on your next project. Please look around at some of the showcases or contact directly for more information.</p>
+                    </div>
                 </div>
-            </div>
-            <div className="skills">
-                <h3>SKILLS</h3>
-                {
-                    skills.map((skill, i) => {
-                        return <div className="skill" key={i}><b>{skill.title}</b><div className="list"> {skill.skills.map((s, i) => { return <span key={i}>{s}, </span> })}</div></div>
-                    })
-                }
+                <div className="skills">
+                    <h3>&#128187; SKILLS</h3>
+                    {
+                        skills.map((skill, i) => {
+                            return <div className="skill" key={i}><b>{skill.title}</b><div className="list"> {skill.skills.map((s, i) => { return <span key={i}>{s}, </span> })}</div></div>
+                        })
+                    }
+                </div>
+
+                <div className="cloudLinks">
+                    <h3>&#127757; AWS CLOUDLINKS</h3>
+                    {
+                        cloudLinks.map((cloudLink, i) => {
+                            return <div className="cloudLink" key={i}><a href={cloudLink.link} target="_blank">{cloudLink.title}</a><p>{cloudLink.description}</p></div>
+                        })
+                    }
+                </div>
+
+                <div className="certificates">
+                    <h3>&#128278; CERTIFICATES</h3>
+                    {
+                        certificates.map((certificate, i) => {
+                            return <div className="certificate" key={i}><a href={certificate.link} target="_blank">{certificate.title}</a><p>{certificate.description}</p></div>
+                        })
+                    }
+                </div>
+
+                <div className="personal">
+                    <h3>&#128129; PERSONAL INFORMATION</h3>
+                    <p>My previous job was: {info.previous_job} - <a href={info.previous_url} target="_blank">{info.previous_url}</a>
+                        <br /> Hobbies: {info.hobby} - <a href={info.hobby_url} target="_blank">{info.hobby_url}</a></p>
+                </div>
+
+                <h3>&#128231; RECEIVE AN EMAIL</h3>
+                <div className="contactForm">
+
+                    <form onSubmit={handleSubmit}>
+                        <input type="text" placeholder="your name" onChange={userName} value={newUser} />
+                        <input type="text" placeholder="your email" onChange={userMail} value={newMail} />
+                        <input type="hidden" placeholder="your message" onChange={userMessage} value={newMessage} />
+                        <button type="submit" >Mail</button>
+                        <p className="info">Please submit your info: {newUser} // {newMail}<br />Press "Mail" to receive an email with my info...</p>
+                    </form>
+
+                    <div class='list'>{
+                        list.map((item, i) => { return <span key={i}><p id={i} className="info">{item.text} <button type="button" onClick={deleteItem}>Delete</button></p></span> })
+                    }</div>
+                </div>
+
             </div>
 
-            <br />
-            <p className="cloudLinks">
-                {
-                    cloudLinks.map((cloudLink, i) => {
-                        return <div className="cloudLink" key={i}><a href={cloudLink.link} target="_blank">{cloudLink.title}</a><p>{cloudLink.description}</p></div>
-                    })
-                }
-            </p>
-            <p className="certificates">
-                {
-                    certificates.map((certificate, i) => {
-                        return <div className="certificate" key={i}><a href={certificate.link} target="_blank">{certificate.title}</a><p>{certificate.description}</p></div>
-                    })
-                }
-            </p>
 
             <br />
-            <div className="contactForm">
-                <form onSubmit={handleSubmit}>
-                    <input type="text" placeholder="your name" onChange={userName} value={newUser} />
-                    <input type="text" placeholder="your email" onChange={userMail} value={newMail} />
-                    <input type="hidden" placeholder="your message" onChange={userMessage} value={newMessage} />
-                    <button type="submit" >Mail</button>
-                    <p className="info">Please submit your info: {newUser} // {newMail}<br />Press "Mail" to receive an email with my info...</p>
-                </form>
-            </div>
-            <div className="personal">
-                <p>Some personal information:</p>
-                <p>My previous job was: {info.previous_job} - <a href={info.previous_url} target="_blank">{info.previous_url}</a>
-                    <br /> Hobbies: {info.hobby} - <a href={info.hobby_url} target="_blank">{info.hobby_url}</a></p>
-            </div>
 
-
-            <div class='list'>{
-                list.map((item, i) => { return <span key={i}><p id={i} className="info">{item.text} <button type="button" onClick={deleteItem}>Delete</button></p></span> })
-            }</div>
-            <br />
-            <br />
             <div className="git">
-                <h2>***My Githubs***</h2>
+                <h3>&#128190; ***MY GITS***</h3>
                 <h5>Visit my repositories:</h5>
 
                 {isLoading && <div>My gits are loading...</div>}
@@ -217,10 +231,7 @@ function Jahfed() {
                     </div >
                 }
             </div>
-            <br />
 
-
-            {/* <hr /> */}
 
         </>
 
