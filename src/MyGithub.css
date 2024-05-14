@@ -5,6 +5,11 @@
     /* background-color: white; */
 }
 
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: white;
+}
+
 h3 {
     color: rgba(19, 0, 165, 0.523);
     letter-spacing: 2px;
@@ -35,6 +40,7 @@ h3 {
 
 .info {
     font-size: 12px;
+    text-align: justify;
     padding: 5px;
     margin-bottom: 5px;
     margin-top: 2px;
@@ -53,7 +59,7 @@ h3 {
 
 .header {
     font-size: 40px;
-    color: rgba(19, 0, 165, 0.814);
+    color: rgba(19, 0, 165, 0.523);
     margin: 5px;
 }
 
@@ -73,22 +79,18 @@ h3 {
 
 .skills {
     text-align: left;
-
     color: rgba(19, 0, 165, 0.523);
-
-
     font-size: 13px;
-
     padding-top: 5px;
 
     .skill {
         letter-spacing: 1px;
         font-size: 12px;
-        display: flex;
-        flex-direction: row;
+        text-transform: capitalize;
         color: black;
-        border-left: solid rgba(3, 0, 194, 0.707) 1px;
+        border-left: solid rgba(19, 0, 165, 0.523) 1px;
         padding-left: 15px;
+        padding-top: 3px;
 
         b {
             color: rgba(19, 0, 165, 0.523);
@@ -157,8 +159,6 @@ h3 {
     text-align: left;
     margin-top: 20px;
     padding-top: 0px;
-
-    /* border-left: 1px solid; */
 }
 
 .persona {
@@ -176,15 +176,29 @@ h3 {
     align-items: center;
     justify-content: center;
     padding: 0px;
+
+    .interact {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }
 
 form {
     background-color: rgba(245, 245, 245, 0.313);
-    width: 50%;
+    width: 50vw;
     border-radius: 12px;
     padding: 15px;
     margin: 5px;
     box-shadow: 1px 1px 4px;
+    overflow-x: scroll;
+
+    ::placeholder {
+        color: whitesmoke;
+        font-weight: normal;
+        font-size: 12px;
+        font-style: italic;
+    }
 
     input[type="text"] {
         color: white;
@@ -251,10 +265,11 @@ form {
 }
 
 .gitCards {
+    color: white;
     width: 250px;
     height: 80px;
     font-size: 14px;
-    background-color: rgba(13, 0, 158, 0.676);
+    background-color: rgba(38, 0, 87, 0.735);
     overflow-y: scroll;
     margin: 5px;
     padding: 15px;

@@ -44,7 +44,7 @@ function Jahfed() {
         job: "Retrained: Back-End/Fullstack developer (Junior)",
         phone_number: "+316 227 222 95",
         email: "jahfed@icloud.com",
-        previous_job: "Movie production / Location Management and Scouting",
+        previous_job: "Movie production / Location Management and Scouting | Amongst which projects for: Warner Bros NL, Netflix, Videoland, NPO, Talpa",
         previous_url: "https://jahfed.com",
         hobby: "Music",
         hobby_url: "https://sharkytheband.nl"
@@ -52,42 +52,38 @@ function Jahfed() {
 
     const skills = [
         {
-            title: "skills",
-            skills: ["javascript", "node.js", "php", "html", "css", "express", "prisma", "mySQL"]
+            title: "Skills",
+            skills: ["javascript", "node.js", "php", "html", "css", "express", "prisma", "mySQL", "python", "React", "Laravel", "Vite", "Angular", "Docker", "Kubernetes", "AWS"]
         },
         {
-            title: "newInterests",
-            skills: ["python (basics)", "C#/dotnet (basics)", "React", "Laravel", "Vite", "Angular", "Docker", "Kubernetes", "AWS"]
-        },
-        {
-            title: "softSkills",
+            title: "Soft Skills",
             skills: ["management", "planning", "communication", "teamwork", "budgets", "contracts"]
         },
         {
-            title: "futureInterests",
-            skills: ["matrix calculations", "machine learning", "AI-development"]
+            title: "Interests",
+            skills: ["C#/dotnet (basics)", "matrix calculations", "machine learning", "AI-development"]
         }
     ]
 
     const cloudLinks = [
         {
             title: "Laravel",
-            link: "http://ec2-3-255-86-249.eu-west-1.compute.amazonaws.com",
+            link: "http://pizzas.jahfed-w.nl",
             description: "A simple application build with Laravel, connected to a MySQL database. This runs on a free instance of EC2, but can also be deployed as a full microservices app."
         },
         {
             title: "Bookstore API (Node.js - Express)",
-            link: "http://ec2-18-185-94-202.eu-central-1.compute.amazonaws.com/books",
+            link: "http://books-api.jahfed-w.nl",
             description: "Deployment of an API for a bookstore with a REST API in node.js and Express. The bookstore is scalable, because all the functionalities are seperated, and the bookstore can also sell records in the future."
         },
         {
             title: "Booking API (Node.js - Express)",
-            link: "http://ec2-3-67-69-32.eu-central-1.compute.amazonaws.com",
+            link: "http://booking-api.jahfed-w.nl",
             description: "Deployment of the final API in Winc-Academy for a back-end booking API. A scalable REST API with JWT-token or Auth0 authentication, Sentry ErrorLogging, connnected to a database with Prisma ORM. Also possible to connect to a Planetscale or AWS database for scalability."
         },
         {
             title: "Flask Store API (Flask)",
-            link: "http://ec2-18-199-90-249.eu-central-1.compute.amazonaws.com",
+            link: "http://flask-store-api.jahfed-w.nl",
             description: "Deployment of a Flask API with JWT protected endpoints. Read the included Swagger Documentation for the respective endpoints."
         }
     ]
@@ -158,22 +154,22 @@ function Jahfed() {
                 <div className="head">
                     <img className="avatar" src={fotoMe5} />
                     <div className="mainInfo">
-                        <h1 className="header">Job Info</h1>
-                        <p className="persona">{info.name} - {info.job}</p>
+                        <h1 className="header">{info.name}</h1>
+                        <p className="persona">{info.job}</p>
                         <p className="info">{info.phone_number} - {info.email} - please contact for more detailed information or request an email (see form below).</p>
-                        <p className="info">Recently retrained junior back-end or fullstack developer with a management and poblem-solving background. The jobs involved a lot of problem-solving skills, critical thinking, quick adjustments and constant communication between different teams to get to the best end-product. These skills are now aimed at finding the best solution for your development-challenges. With recent retraining in back-end development and years of interest in coding and digital developments I am available to start directly on your next project. Please look around at some of the showcases or contact directly for more information.</p>
+                        <p className="info">Recently retrained junior back-end or fullstack developer with a management and poblem-solving background. The previous jobs involved a lot of solution-based skills, critical thinking, quick adjustments and constant communication between different teams to get to the best end-product. These skills are now aimed at finding the best solution for your development-challenges. With recent retraining in back-end development and years of interest in coding and digital developments I am available to start directly on your next project. Please look around at some of the showcases or contact directly for more information.</p>
                     </div>
                 </div>
                 <div className="skills">
                     <h3>&#128187; SKILLS</h3>
                     {
                         skills.map((skill, i) => {
-                            return <div className="skill" key={i}><b>{skill.title}</b><div className="list"> {skill.skills.map((s, i) => { return <span key={i}>{s}, </span> })}</div></div>
+                            return <div className="skill" key={i}><b>{skill.title}</b><div className="list"> {skill.skills.map((s, i) => { return <span key={i}>{s},</span> })}</div></div>
                         })
                     }
                 </div>
 
-                <div className="cloudLinks">
+                <div className="certificates">
                     <h3>&#127757; AWS CLOUDLINKS</h3>
                     {
                         cloudLinks.map((cloudLink, i) => {
@@ -201,10 +197,12 @@ function Jahfed() {
                 <div className="contactForm">
 
                     <form onSubmit={handleSubmit}>
-                        <input type="text" placeholder="your name" onChange={userName} value={newUser} />
-                        <input type="text" placeholder="your email" onChange={userMail} value={newMail} />
-                        <input type="hidden" placeholder="your message" onChange={userMessage} value={newMessage} />
-                        <button type="submit" >Mail</button>
+                        <div className="interact"><input type="text" placeholder="your name" onChange={userName} value={newUser} />
+                            <input type="text" placeholder="your email" onChange={userMail} value={newMail} />
+                            <input type="hidden" placeholder="your message" onChange={userMessage} value={newMessage} />
+                            <button type="submit" >Mail</button>
+                        </div>
+
                         <p className="info">Please submit your info: {newUser} // {newMail}<br />Press "Mail" to receive an email with my info...</p>
                     </form>
 
