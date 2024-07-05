@@ -1,12 +1,14 @@
 #root {
-    width: 100vw;
-    padding: 0;
+    width: 60%;
+    margin-inline: auto;
+    margin-top: 3rem;
+
+    padding: 2rem;
     text-align: center;
-    /* background-color: white; */
 }
 
 body::-webkit-scrollbar {
-    width: 10px;
+    scroll-behavior: smooth;
     background-color: white;
 }
 
@@ -18,10 +20,15 @@ h3 {
     padding: 0px;
     padding-top: 35px;
     border-bottom: 1px solid;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+}
+
+h3:hover {
+    transform: rotateY(180deg);
 }
 
 .bgimg {
-    max-width: 100vw;
     position: absolute;
     z-index: -2;
     object-fit: cover;
@@ -35,288 +42,21 @@ h3 {
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
-    margin: 10px;
 }
 
 .info {
-    font-size: 12px;
+    font-size: .7rem;
     text-align: justify;
     padding: 5px;
     margin-bottom: 5px;
     margin-top: 2px;
 }
 
-.head {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
-}
-
-.mainInfo {
-    text-align: left;
-    margin-left: 2%;
-}
-
 .header {
-    font-size: 40px;
+    text-transform: uppercase;
+    font-size: 2rem;
     color: rgba(19, 0, 165, 0.523);
     margin: 5px;
-}
-
-.avatar {
-    margin: 0px;
-    object-fit: cover;
-    border-radius: 10px;
-    width: 150px;
-    height: 200px;
-}
-
-.avatar:hover {
-    box-shadow: 0.5px 0.5px 5px purple;
-    transition: all 0.2s;
-    cursor: pointer;
-}
-
-.skills {
-    text-align: left;
-    color: rgba(19, 0, 165, 0.523);
-    font-size: 13px;
-    padding-top: 5px;
-
-    .skill {
-        letter-spacing: 1px;
-        font-size: 12px;
-        text-transform: capitalize;
-        color: black;
-        border-left: solid rgba(19, 0, 165, 0.523) 1px;
-        padding-left: 15px;
-        padding-top: 3px;
-
-        b {
-            color: rgba(19, 0, 165, 0.523);
-            margin-right: 25px;
-            width: 120px;
-            text-overflow: ellipsis;
-        }
-
-        .list {
-            text-align: left;
-        }
-
-        span {
-            margin-left: 0px;
-        }
-    }
-}
-
-.cloudLinks {
-    font-size: 14px;
-    display: flex;
-    text-align: left;
-    flex-direction: column;
-    margin: 0px;
-    padding: 0px;
-    align-content: flex-start;
-    margin-bottom: 20px;
-
-
-    a {
-        font-weight: bold;
-        border-bottom: solid 1px;
-        margin-bottom: 0px;
-    }
-
-    p {
-        font-size: 12px;
-    }
-}
-
-.certificates {
-    margin-top: 40px;
-    padding-top: 20px;
-    font-size: 12px;
-
-
-    a {
-        border-bottom: 1px solid;
-        font-weight: bold;
-        margin: 0px;
-        padding: 0px;
-        padding-left: 10px;
-        padding-right: 10px;
-
-    }
-
-    p {
-        margin: 0px;
-        padding: 0px;
-        margin-bottom: 10px;
-    }
-}
-
-.personal {
-    font-size: 12px;
-    text-align: left;
-    margin-top: 20px;
-    padding-top: 0px;
-}
-
-.persona {
-    font: 14px;
-    font-weight: bold;
-    margin: 0px;
-    margin-bottom: 15px;
-}
-
-.contactForm {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    padding: 0px;
-
-    .interact {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-}
-
-form {
-    background-color: rgba(245, 245, 245, 0.313);
-    width: 50vw;
-    border-radius: 12px;
-    padding: 15px;
-    margin: 5px;
-    box-shadow: 1px 1px 4px;
-    overflow-x: scroll;
-
-    ::placeholder {
-        color: whitesmoke;
-        font-weight: normal;
-        font-size: 12px;
-        font-style: italic;
-    }
-
-    input[type="text"] {
-        color: white;
-        font-size: 14px;
-        font-weight: bold;
-        padding: 10px;
-        margin-right: 15px;
-        border-radius: 8px;
-        border-style: solid;
-        border-width: 0.5px;
-        background-color: rgba(38, 0, 87, 0.735);
-    }
-
-    input[type="text"]:hover {
-        border-color: whitesmoke;
-    }
-
-    button[type="submit"] {
-        font-weight: bold;
-        font-size: 14px;
-        color: white;
-        background-color: rgba(38, 0, 87, 0.783);
-    }
-
-    button[type="submit"]:hover {
-        border-color: whitesmoke;
-    }
-}
-
-.git {
-    padding: 0px;
-    margin: 0px;
-
-    h2 {
-        font-size: 20px;
-        color: rgba(54, 11, 128, 0.787);
-        border-top: 1px solid;
-        margin: 0px;
-        padding: 0px;
-        padding-top: 15px;
-    }
-
-    h5 {
-        font-size: 14px;
-        margin: 0px;
-        padding: 0px;
-        padding-bottom: 20px;
-        font-weight: normal;
-    }
-
-    p {
-        font-size: 12px;
-        text-align: left;
-    }
-}
-
-.ghRepo {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 100%;
-    margin: 0px;
-}
-
-.gitCards {
-    color: white;
-    width: 250px;
-    height: 80px;
-    font-size: 14px;
-    background-color: rgba(38, 0, 87, 0.735);
-    overflow-y: scroll;
-    margin: 5px;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 2px 2px 4px rgba(44, 44, 44, 0.464);
-    text-overflow: ellipsis;
-}
-
-.gitCards:hover {
-    opacity: 0.75;
-    margin-top: 3px;
-    box-shadow: 2px 2px 7px;
-    transition: all 0.5s;
-    cursor: pointer;
-}
-
-
-
-.logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-}
-
-.logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
-        animation: logo-spin infinite 20s linear;
-    }
 }
 
 .card {

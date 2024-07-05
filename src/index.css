@@ -1,12 +1,17 @@
 :root {
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  margin-top: 20px;
+  margin-top: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   color-scheme: light dark;
   color: rgba(0, 0, 0, 0.87);
   background-color: whitesmoke;
+  background: linear-gradient(to bottom, rgb(240, 247, 255), rgb(170, 211, 241));
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,10 +30,8 @@ a:hover {
 }
 
 body {
+  width: 100vw;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
 }
 
 h1 {

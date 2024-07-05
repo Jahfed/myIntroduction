@@ -1,0 +1,95 @@
+.git {
+    padding: 0;
+    margin: 0px;
+}
+
+.git h2 {
+    font-size: 20px;
+    color: rgba(54, 11, 128, 0.787);
+    border-top: 1px solid;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 15px;
+}
+
+.git h5 {
+    font-size: .8rem;
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 20px;
+    font-weight: normal;
+}
+
+.git p {
+    font-size: .6rem;
+    text-align: left;
+}
+
+
+.ghRepo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 15rem;
+    gap: .2rem;
+}
+
+.gitCards {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: row;
+    gap: .3rem;
+    align-items: start;
+    columns: 2;
+    column-gap: 1rem;
+    column-rule-color: white;
+    column-rule-style: solid;
+    column-width: 2px;
+    color: rgba(103, 0, 124, 0);
+    width: 200px;
+    height: 60px;
+    font-size: .8rem;
+    background: linear-gradient(to top, rgb(123, 56, 123), rgb(104, 21, 104));
+    overflow-y: scroll;
+    margin: 0;
+    padding: 1.1rem;
+    border: solid rgb(68, 0, 59) 1.5px;
+
+    border-radius: .4rem;
+    box-shadow: 2px 2px 4px rgba(44, 44, 44, 0.464);
+    text-overflow: ellipsis;
+    transition: all .7s ease-in-out;
+
+
+}
+
+.gitCards:hover {
+    opacity: 1;
+    color: white;
+    position: relative;
+    z-index: 999;
+    box-shadow: 2px 2px 3rem rgba(111, 16, 98, 0.456);
+    transform: scale(1.4) translateY(-5px) rotateY(0deg);
+    cursor: pointer;
+}
+
+.gitCards a {
+    display: flex;
+    flex-direction: row;
+    gap: .3rem;
+    align-items: center;
+}
+
+.logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+}

@@ -1,0 +1,47 @@
+.head {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.head .avatar {
+    margin: 0px;
+    object-fit: cover;
+    border-radius: 10px;
+    width: 150px;
+    height: 200px;
+    transition: all 0.8s ease-in-out;
+}
+
+.head .avatar:hover {
+    box-shadow: 0.5px 0.5px .7rem rgba(128, 0, 128, 0.375);
+    transform: scale(1.8) translateX(15vw) translateY(10vh) rotate(360deg);
+    cursor: pointer;
+}
+
+.head .mainInfo {
+    text-align: left;
+    margin-left: 2%;
+}
+
+.head .info {
+    font-size: .7rem;
+    text-align: justify;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-top: 2px;
+}
+
+.head .header {
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: rgba(19, 0, 165, 0.523);
+    margin: 5px;
+}
+
+.head .persona {
+    font: 14px;
+    font-weight: bold;
+    margin: 0px;
+    margin-bottom: 15px;
+}
